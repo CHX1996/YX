@@ -1,0 +1,169 @@
+
+
+*{margin: 0;padding: 0;text-decoration: none;list-style: none}
+header{
+	width:910px;
+	margin:auto;
+	position:relative;
+}
+header a:first-child{
+	float: right;
+	padding:10px 40px;
+	background:#f2f2f2;
+	border:1px solid #eee;
+	margin:10px 20px;
+}
+header .cart{
+	width:30px;
+	width:30px;
+	height:30px;
+	border-radius: 30px;
+	background:rgb(150,50,80);
+	color:#fff;
+	text-align: center;
+	line-height: 30px;
+	position: absolute;
+	right: 25px;
+	top:0px;
+}
+
+section{
+	width:910px;
+	margin:50px auto 150px;
+}
+h1{
+	text-align: center;
+	color:#fff;
+	background-color:rgb(30,50,80);
+	padding:10px 0 15px 0;
+}
+
+
+
+
+
+
+
+
+
+.bk-list{
+	
+}
+.bk-list li{
+	float:left;
+	width:300px;	
+	border:1px solid #fff;
+	margin-bottom: 20px;
+}
+.bk-list li:hover{
+	border-color:#ddd;
+}
+.bk-list  li .img-a{
+	display: block;
+	text-align: center;
+	margin: 40px 20px;
+}
+.bk-list li .price{
+	font-size:22px;
+	color:#e4393c;
+	padding:0 15px;
+}
+.bk-list li .price em{
+	font-size:16px;
+	font-style:normal;
+}
+.bk-list li > div{
+	margin-top: 15px;
+	margin-left: 20px;
+	margin-right: 20px;
+	font-size:14px;
+	height:20px;
+	overflow:hidden;
+}
+.bk-list li > div span.key-words{
+	color:#ffaa71;
+}
+.bk-list li a.add-cart{
+	display: block;
+	font-size:14px;
+	color: #e4393c;
+	width:120px;
+	margin:20px auto 25px;
+	text-align: center;
+	line-height: 24px;
+	border:1px solid #e4393c;
+}
+
+
+
+
+
+
+
+
+.cart-list{
+	
+}
+.cart-list li{
+	width:900px;	
+	border:1px solid #ddd;
+	border-top:none;
+}
+.cart-list li:first-child{
+	border-top:1px solid #ddd;
+}
+.cart-list li::after{
+	content: '';
+	display: block;
+	clear: both;
+}
+.cart-list  li .img-a{
+	display: block;
+	text-align: center;
+	margin: 16px 20px;
+	float:left;
+	width:100px;
+	border:1px solid #eee;
+}
+.cart-list  li .img-a img{
+	width:90px;
+}
+.cart-list li > div{
+	float:left;
+	margin-top: 15px;
+	margin-left: 20px;
+	margin-right: 20px;
+	font-size:14px;
+}
+.cart-list li > div .name{
+	display: inline-block;
+	width:250px;
+	margin-right: 50px;
+}
+.cart-list li > div .key-words{
+	display: inline-block;
+	width:120px;
+	margin-right: 50px;
+}
+.cart-list li > div .price{
+	display: inline-block;
+	font-size:14px;
+	font-weight:bold;
+	color:#333;
+	margin-right: 50px;
+}
+.cart-list li > div .num{
+	margin-right:30px;
+}
+.cart-list li .price em{
+	font-style:normal;
+}
+.cart-list li > div span.key-words{
+	color:#ffaa71;
+}
+.cart-list li > div .del{
+	padding:0 10px;
+}
+.cart-list li > div .del:hover{
+	color:#e4393c;
+}

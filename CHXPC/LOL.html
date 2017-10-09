@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>英雄联盟</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <link href="css/bootstrap.min.css" type="text/css" rel="stylesheet"/>
+    <script src="js/jquery-3.2.1.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/lb2.js"></script>
+
+
+    <style>
+        /*上面部分*/
+        *{margin: 0;padding: 0;list-style: none;text-decoration: none;}
+        #box_1{width:100%;height: 90px;background-color:  #0b0b0b; position: relative}
+        .box_1ul{ width: 650px;height: 90px;overflow: hidden;    zoom: 1;float: left}
+        .box_1ul>li{   width: 120px;height: 90px; display: inline-block;line-height: 30px;}
+        .box_1ul>li>a{ display: block;  width: 100%;  padding-top: 30px;  text-align: center;  color: #ffffff;  font-size: 18px;}
+        .box_1ul>li>span{     font-size: 10px; color: #838383;display: block;text-align: center;}
+        #sosuo{float: left;
+            width: 40px;
+            height: 90px;
+            margin-left: -18px;
+            text-align: center}
+        #sosuo>i{display: inline-block;
+            width: 27px;
+            height: 27px;
+            margin-top: 30px;
+            background-position: -10px 0;
+            cursor: pointer;}
+
+
+        #sosuokuang{    position: absolute;
+           left: 1200px;;top:10px ;
+            width: 440px;
+            height: 90px;
+            z-index: 4;
+            background:black ;
+            display: none;
+        }
+        #ssktop{    margin-top: 27px;
+            width: 100%;
+            height: 36px;
+            background: #fff;
+            overflow: hidden;}
+        #ico{    float: left;
+            background: url("img/LOL2.png");
+            width: 30px;
+            height: 30px;
+            margin: 3px 4px 0;
+            background-position: -662px -136px;
+        }
+        .input-search-box{    float: left;
+            width: 368px;
+            height: 20px;
+            line-height: 20px;
+            margin-top: 8px;
+            background: #fff;
+            border: 0 none;
+            font-size: 16px;
+            color: #545454;
+
+        }
+       .input-search-tips{    position: absolute;
+           top: 36px;
+           right: 65px;
+           color: #999;
+           font-size: 12px; }
+        .top-search-close{    float: right;
+            background: url("img/LOL2.png");
+            margin-right: 5px;
+            cursor: pointer;
+            width: 28px;
+            height: 36px;
+            background-position: -664px -175px;}
+        .top-search-quick{     position: absolute;
+            width: 420px;
+            padding: 15px 10px;
+            top: 70px;
+            background: #fff;
+        }
+        .search-quick-title{ display: block;
+            padding-left: 30px;
+            height: 30px;
+            line-height: 30px;
+            font-size: 12px;
+            color: #a4a4a4;}
+        .top-search-quick>a {display: block;
+            padding-left: 50px;
+            height: 30px;
+            line-height: 30px;
+            color: #696969;
+            font-size: 14px;}
+        .top-app{ float: left;
+            width: 40px;
+            height: 90px;
+            margin-left: 5px;
+            text-align: center;}
+        .icon-top-app{ background: url("img/LOL2.png")no-repeat ;
+            display: inline-block;
+            width: 21px;
+            height: 27px;
+            margin-top: 30px;
+            background-position: -45px 0;
+            vertical-align: middle;}
+
+
+        .top-user{ float: right;
+            position: relative;
+            width: 350px;
+            margin-right: 12%;
+            margin-top: 10px;;
+       }
+        .top-user-info{ height: 90px;
+            overflow: hidden;
+            zoom: 1;}
+        .top-user-side{  float: left;
+            position: relative;
+            width: 100px;
+            height: 90px; }
+        .user-mask{background: url("img/LOL2.png");
+            position: absolute;
+            left: 13px;
+            top: -8px;
+            z-index: 2;
+            width: 74px;
+            height: 85px;
+            background-position: 0 -159px; }
+       .top-user-side>img {    width: 66px;
+            height: 66px;
+            margin-left: 17px;
+            margin-top: 12px;
+            border-radius: 33px}
+        .top-user-main{ padding-top: 18px;
+            overflow: hidden;
+            zoom: 1;
+            margin-left: 110px;}
+        .top-user-unlogin{     font-size: 16px;
+            color: #fff;
+            padding: 5px 0;}
+        .top-user-tips{color: #999;
+            font-size: 12px;}
+        #gbg{    transition: all .8s ease;}
+
+
+
+    /*<!--下面部分-->*/
+
+
+        .memu{position: relative;
+            width: 100%;
+            height: 80px;
+            border-top: 2px solid #8c6c2d;
+            background: url(img/LOL2.png) repeat-x 0 -257px;
+       }
+        #twodiv{width: 100%;height: 100%; transition: all .8s ease;}
+        .menu-inner{
+                         height: 60px;
+                         width: 1240px;
+                         margin: 0 auto;
+                        list-style: none
+                    }
+        .menu-item{     float: left;
+            width: 110px;
+            height: 58px;
+            line-height: 58px;
+
+            font-size: 20px;
+            color: #555555;
+            text-align: center;
+            cursor: pointer;
+            margin-left: 100px;
+        }
+        .ln{border-bottom: 4px solid #777777}
+        .content{ padding-top: 40px;
+            margin-top: -20px;
+            background: url("img/bg-content-top.jpg")no-repeat center top}
+        .content-inner{ background: url("img/bg-content-bottom.jpg")no-repeat center bottom}
+        .home-slide-item { width: 1240px;
+            margin: 0 auto;
+            overflow: hidden;}
+
+        .promo{float: left;
+            position: relative;
+            width: 820px;
+            height: 400px;
+            margin-right: 20px;
+            margin-bottom: 60px;
+            overflow: hidden;
+            background-color: #0b0b0b;
+       }
+        .promo-list{ position: absolute;
+            left:0;
+            width: 4100px;
+            height: 350px;}
+
+        .promo-item{float: left;
+            width: 820px;
+            height: 340px;
+            background: #000;
+            position: relative;
+           }
+        .promo-trigger{    width: 100%;
+            height: 58px;
+            background: #121112;
+            overflow: hidden;
+            margin-top: 43%;
+        }
+       .trigger-item{ float: left;
+           width: 164px;
+           height: 50px;
+           line-height: 50px;
+           cursor: pointer;
+           text-align: center;
+           color: #c8c8c8;
+           font-size: 14px;}
+        .zn{color: #e9c06c}
+        .side-nav{    float: left;
+            width: 400px;
+            height: 400px}
+        .side-download{    position: relative;
+            display: block;
+            width: 100%;
+            height: 150px;
+            margin-bottom: 10px;
+        background: url("img/bg-download.jpg")no-repeat}
+        .side-down-video{display: block;
+            width: 100%;
+            height: 150px;}
+       .side-menu>li{float: left;
+            width: 130px;
+            height: 55px;
+            margin-left: 5px;
+            margin-top: 5px;}
+        .side-menu>li>a{     display: block;
+            width: 130px;
+            height: 55px;
+            line-height: 55px;
+            background: #fff;
+            text-align: center;
+            font-size: 14px;
+            color: #555555}
+        .side-menu>li>a>i{
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            line-height: 30px;
+            vertical-align: middle;
+            margin-right: 8px;
+        }
+        .icon-1{ background: url("img/LOL2.png")no-repeat -200px 0;}
+        .icon-2{ background: url("img/LOL2.png")no-repeat -560px 0;}
+        .icon-3{ background: url("img/LOL2.png")no-repeat -440px 0;}
+        .icon-4{ background: url("img/LOL2.png")no-repeat -380px 0;}
+        .icon-5{ background: url("img/LOL2.png")no-repeat -650px 0;}
+        .icon-6{ background: url("img/LOL2.png")no-repeat -290px 0;}
+        .icon-7{ background: url("img/LOL2.png")no-repeat -620px 0;}
+        .icon-8{ background: url("img/LOL2.png")no-repeat -260px 0;}
+        .icon-9{ background: url("img/LOL2.png")no-repeat -470px 0;}
+        .icon-10{ background: url("img/LOL2.png")no-repeat -470px 0;}
+        .icon-11{ background: url("img/LOL2.png")no-repeat -500px 0;}
+        .icon-12{ background: url("img/LOL2.png")no-repeat -410px 0;}
+        #dl{width: 682px;height: 468px;position: absolute;top: -2%;left: 33%;background: url("img/dl.jpg")no-repeat -750px center;  display: none ;border-radius: 15px;border: 2px solid #7a7a7a  }
+        #dl_1{width: 300px;height: 280px;margin: 25% auto;}
+        #id_1{ margin-top: 10%;margin-left: 15% ;height: 40px;
+            width: 212px;color: #3c3c3c;
+        font-size: 16px;border-radius: 5px;}
+        #pw{ margin-top: 5%;margin-left: 15%;height: 40px;
+            width: 212px;color: #3c3c3c;
+            font-size: 16px;border-radius: 5px;}
+        #btns{ margin-top: 5%;margin-left:15%;height: 40px;
+            width: 80px;color: #3c3c3c;
+            font-size: 16px;border-radius: 10px;}
+        #zc{font-size: 16px;margin-left: 17%;height: 40px;
+            width: 80px;color: #3c3c3c;
+           border-radius: 10px;}
+        #X{background: url("img/icon_3_tiny.png")no-repeat -221px -126px;width: 47px;
+            height: 20px;
+            position: absolute;top: 27%;left: 93% }
+
+        .tab{position: relative;
+            height: 50px;
+            border-bottom: 3px solid #ededee;
+        margin-top: -2%}
+        .tab-title{ float: left;
+            font-size: 26px;
+            line-height: 20px;
+            color: #404040;
+            margin-left: 40px;
+            font-weight: normal;}
+        .zixun{height: 124px;
+            margin-bottom: 60px;
+
+        }
+        .jqs{display: block;
+            font-size: 36px;
+            font-weight: bold;
+            color: #3e3e3e;
+            line-height: 50px;
+            height: 50px;
+
+        float: left;
+            margin-top: 20px;
+        margin-left: 15px}
+        .news-first-desc{
+            display: block;
+            height: 60px;
+            overflow: hidden;
+            font-size: 14px;
+            color: #898989;
+            line-height: 1.5;
+            float: left;
+            margin-left: 20px;
+            margin-top: 20px;  }
+
+      .lnk-tit{display: block;
+            position: relative;
+            height: 35px;
+            line-height: 35px;
+            padding: 0 55px 0 90px;
+            font-size: 18px;
+            color: #7a7a7a;
+         }
+        .lnk-tit:hover{text-decoration: none;color: #8c6c2d}
+        .new-type{float: left;
+            width: 68px;
+            height: 35px;
+            line-height: 35px;
+            background: #ebebeb;
+            text-align: center;
+            color: #5e5e5e; margin-right: 100px}
+        .date{float: right;
+            width: 50px;
+            height: 35px;
+            line-height: 35px;
+            text-align: right;
+            color: #bababa; margin-left: 110px}
+      #llgd{display: block;
+            width: 100%;
+            height: 45px;
+            margin-top: 60px;
+            line-height: 45px;
+            background: #f0f0f0;
+            color: #7a7a7a;
+            font-size: 16px;
+            text-align: center;  }
+        .xldiv{position: absolute;
+            display: block;
+            top: 88px;
+            left: 0;
+            width: 100%;
+            height: 260px;
+            padding-top: 20px;
+            padding-bottom: 20px;
+            z-index: 3;
+        display: none}
+        .sub-nav-inner{ width: 1140px;
+            height: 190px;
+            padding-left: 200px;
+            margin: 0 auto;
+            overflow: hidden;
+            zoom: 1;  }
+        .sub-nav-item{  float: left ;
+            width: 120px;display: block}
+        .sub-nav-lnk{ display: block;
+            width: 120px;
+            height: 28px;
+            line-height: 28px;
+            color: #7a7a7a;
+            font-size: 14px;
+            text-align: center;}
+    </style>
+</head>
+
+<script>
+    $(function(){
+        var btn1=$('#ssi');
+        var sok=$('#sosuokuang');
+                btn1.click(function(){
+                    $(sok).css('display','block')
+                })
+
+        var gb=$('.top-search-close')
+       gb.click(function(){
+            $(sok).css('display','none')
+        })
+
+        var gbg=$('#gbg');
+       var twodiv=$('#twodiv')
+
+
+        $(document).on("mousewheel DOMMouseScroll", function (e) {
+            gbg.css('background','url("img/pic-back-v13.jpg")no-repeat 0 80px')
+            twodiv.css('margin-top','-410px')
+
+        })
+
+        var hx=$('.icon-update')
+        var lis=$('.menu-item')
+        lis.click(function(){
+            $(this).addClass('ln').siblings('li').removeClass('ln')
+        })
+    var font=$('.trigger-item')
+        font.click(function(){
+            $(this).addClass('zn').siblings('span').removeClass('zn')})
+
+        var dlbtn=$('#dlbtn');
+        var dl=$('#dl');
+        dlbtn.click(function(){
+            dl.css('display','block' )
+        })
+        var X=$('#X');
+        X.click(function(){
+            dl.css('display','none' )
+        })
+        var xldiv=$('.xldiv')
+        var box_1ul=$('.box_1ul')
+            box_1ul.mouseenter(function(){
+
+                xldiv.css('display','block')
+            })
+        var sub=$('.sub-nav-inner')
+            sub.mouseleave(function(){
+                xldiv.css('display','none')
+            })
+
+        var btns=$('#btns')
+        var topdl=$('#topdl');
+        var dlp=$('#dlp')
+        btns.click(function(){
+                topdl.css('display','none')
+                dlp.css('display','block' )
+            dl.css('display','none')
+        })
+    })
+
+
+</script>
+<script>
+    window.onload=function(){
+        var txt=document.querySelector('#id_1')
+       var pw=document.querySelector('#pw');
+
+        var txt=txt.innerHTML
+        console.log(txt)
+        if( window.localStorage ) {
+//            window.localStorage.clear()
+            localStorage.setItem('ttx', " ")
+                 window.localStorage.getItem('ttx');
+                    console.log('ttx')
+
+
+            }
+
+
+
+
+        }
+
+</script>
+<body>
+<div style="width: 100%;height: 100%">
+    <div id="dl">
+        <div id="dl_1">
+            <div style=" width: 250px;height: 60px;color: ivory;margin-left: 13%;font-size: 28px">英雄联盟官网登录 </div>
+           <input type="text" placeholder="请输入账号:"  id="id_1">
+            <input type="password" placeholder="请输入密码:"  id="pw" >
+            <button id="btns">登录</button>
+           <a href="zc.html">  <button  id="zc"> 注册</button></a>
+            <span id="X"> </span>
+        </div>
+    </div>
+    <!--上面部分-->
+    <div style="    height: 840px;overflow: hidden;;background: url('img/pic-big-v13.jpg')no-repeat 0 90px"id="gbg">
+    <div id="box_1" >
+    <img src="img/首页LOL.jpg" style="height: 90px;width: 150px;margin-left: 15%;margin-right:7%;float: left">
+
+        <ul class="box_1ul">
+            <li>
+                <a href="英雄资料.html" >游戏资料  </a>
+                 <span>GAME INFO</span>
+            </li>
+            <li><a href="购物车.html">商城/合作 </a>
+            <span>STORE</span>
+            </li>
+            <li>
+                <a href="##">用户互动</a>
+                <span>COMMUNITY</span>
+            </li>
+            <li>
+                <a href="http://lpl.qq.com/"> 赛事中心</a>
+                <span>EVENTS</span>
+            </li>
+            <li>
+                <a href=" zc.html">注册系统</a>
+                <span> SYSTEM</span>
+            </li>
+        </ul>
+
+        <div style="background: rgba(0,0,0,0.7)" class="xldiv">
+        <ul class="sub-nav-inner" >
+
+            <li class="sub-nav-item">
+                <a class="sub-nav-lnk"  href="##" target="_blank">新手指引</a>
+                <a class="sub-nav-lnk"  href="##" target="_blank">宇宙官网</a>
+                <a class="sub-nav-lnk"  href="##" target="_blank">资料库</a>
+                <a class="sub-nav-lnk"  href="##" target="_blank">攻略中心</a>
+                <a class="sub-nav-lnk"  href="##" target="_blank">模式实验室</a>
+                <a class="sub-nav-lnk"  href="##" target="_blank">海克斯战利品库</a>
+                <a class="sub-nav-lnk"  href="##" target="_blank">屏保下载</a>
+            </li>
+            <li class="sub-nav-item">
+                <a class="sub-nav-lnk"  href="##" target="_blank">点券充值</a>
+                <a class="sub-nav-lnk"  href="##" target="_blank">道聚城</a>
+                <a class="sub-nav-lnk"  href="##" target="_blank">周边商城</a>
+                <a class="sub-nav-lnk"  href="##" target="_blank">LOL桌游</a>
+                <a class="sub-nav-lnk"  href="##" target="_blank">LOL信用卡</a>
+                <a class="sub-nav-lnk"  href="##" target="_blank">网吧特权</a>
+            </li>
+            <li class="sub-nav-item">
+                <a class="sub-nav-lnk"  href="##" target="_blank">在线客服</a>
+                <a class="sub-nav-lnk"  href="##" target="_blank">视频中心</a>
+                <a class="sub-nav-lnk"  href="##" target="_blank">官方论坛</a>
+                <a class="sub-nav-lnk"  href="##" target="_blank">官方微信</a>
+                <a class="sub-nav-lnk"  href="##" target="_blank">官方微博</a>
+            </li>
+            <li class="sub-nav-item">
+                <a class="sub-nav-lnk"  href="##" target="_blank">LPL职业联赛</a>
+                <a class="sub-nav-lnk"  href="##" target="_blank">德玛西亚杯</a>
+                <a class="sub-nav-lnk"  href="##" target="_blank">城市争霸赛</a>
+                <a class="sub-nav-lnk"  href="##" target="_blank">高校联赛</a>
+                <a class="sub-nav-lnk"  href="##" target="_blank">LDL发展联赛</a>
+                <a class="sub-nav-lnk"  href="##" target="_blank">高校自发赛</a>
+            </li>
+            <li class="sub-nav-item">
+                <a class="sub-nav-lnk"  href="##" target="_blank">点亮图标</a>
+                <a class="sub-nav-lnk"  href="##" target="_blank">封号查询</a>
+                <a class="sub-nav-lnk"  href="##" target="_blank">体验服申请</a>
+                <a class="sub-nav-lnk"  href="##" target="_blank">回放系统</a>
+                <a class="sub-nav-lnk"  href="##" target="_blank">服务器状态查询</a>
+                <a class="sub-nav-lnk"  href="##" target="_blank">裁决之镰</a>
+            </li>
+
+        </ul>
+    </div>
+
+
+
+
+
+
+      <span id="sosuo">
+      <i id="ssi"  style="background: url('img/LOL2.png')no-repeat -8px 0"> </i>
+      </span>
+        <div id="sosuokuang">
+            <div id="ssktop">
+                <i id="ico"> </i>
+                <input class="input-search-box" type="text" value="" placeholder="搜索 lol.qq.com" >
+                <span class="input-search-tips">按下回车键进行搜索</span>
+                <span  class="top-search-close" title="关闭搜索系统"></span>
+            </div>
+            <div class="top-search-quick" >
+                <h5 class="search-quick-title">快速链接</h5>
+                <a href="##" target="_blank">全球总决赛</a>
+                <a href="##" target="_blank">新皮肤</a><a href="##" target="_blank">月饼</a>
+                <a href="##" target="_blank">季前赛</a><a href="##" target="_blank">奥恩</a>
+            </div>
+
+        </div>
+        <a class="top-app" href="手机.html" target="_blank" title="前往掌上英雄联盟官网">
+            <i class="icon-top-app" ></i></a>
+
+        <!--登录    -->
+        <div class="top-user">
+
+            <div class="top-user-info" >
+                <div class="top-user-side">
+                    <span class="user-mask"></span>
+                   <img src="img/touxiang.png">
+                </div>
+
+                <div class="top-user-main" id="topdl">
+                    <div class="top-user-unlogin" >亲爱的召唤师，欢迎
+                        <a id="dlbtn" >登录</a></div>
+                    <div class="top-user-tips">登录后查看自己的战绩、资产、声望值等</div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+    </div>
+    <!--//////////////////////////////////////////////////////////////-->
+    <!--//////////////////////////////////////////////////////////////-->
+    <!--<下面部分-->
+    <div id="twodiv">
+    <div class="memu">
+        <ul  class="menu-inner layout">
+            <li  class="menu-item ln">综合资讯<i class="icon-update"></i></li>
+            <li class="dot"></li>
+            <li  class="menu-item">视频中心<i class="icon-update"></i></li>
+            <li class="dot"></li>
+            <li  class="menu-item">赛事中心<i class="icon-update"></i></li>
+            <li class="dot"></li>
+            <li  class="menu-item">活动中心<i class="icon-update"></i></li>
+
+        </ul>
+
+    </div>
+            <div class="content">
+                <div class="content-inner"></div>
+                    <div class="layout" style="overflow: hidden;width: 1240px;margin: 0 auto;">
+
+                        <div class="home-slide-item ">
+                                <!--轮播-->
+                            <div  class="promo"id="boxx">
+                                <ul  class="promo-list" id="pics">
+
+                                    <li class="promo-item"><a  href="##" target="_blank"><img src="img/LBT/LB1.jpg" width="820" height="350" alt="李青之跃龙在渊"></a></li>
+                                    <li class="promo-item"><a  href="##" target="_blank"><img src="img/LBT/LB2.jpg" width="820" height="350"></a></li>
+                                    <li class="promo-item"><a href="##" target="_blank"><img src="img/LBT/LB3.jpg" width="820" height="350" alt="全球总决赛直播中"></a></li>
+                                    <li class="promo-item"><a href="##" target="_blank"><img src="img/LBT/LB4.jpg " width="820" height="350" alt="阿卡丽的黑金商店"></a></li>
+                                    <li class="promo-item"><a  href="##" target="_blank"><img src="img/LBT/LB5.jpg" width="820" height="350" alt="英雄联盟开学季活动"></a></li>
+
+                                </ul>
+
+
+
+                                <div  class="promo-trigger" id="dots">
+                                    <span class="trigger-item zn" id="checked">李青之跃龙在渊</span>
+                                    <span class="trigger-item ">海克斯魔法引擎</span>
+                                    <span class="trigger-item">全球总决赛直播中</span>
+                                    <span class="trigger-item">阿卡丽的黑金商店</span><span class="trigger-item">英雄联盟开学季活动</span>
+                                </div>
+                            </div>
+<!--&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;-->
+                            <!--侧边-->
+                            <div class="side-nav">
+                                <!--下载-->
+                                <div class="side-download">
+                                    <video class="side-down-video" autoplay loop>
+                                        <source src="video/down.mp4" type="video/mp4">
+                                    </video>
+                                    
+                                </div>
+<!--。。-->
+
+                                <ul class="side-menu" style="margin-left: -5px">
+                                    <li>
+                                        <a href="##" target="_blank" >
+                                            <i class="icon-1"></i>新手推荐</a>
+                                    </li>
+                                    <li> <a href="##" target="_blank" >
+                                        <i class="icon-2"></i>宇宙官网</a></li>
+                                    <li> <a href="##" target="_blank" >
+                                        <i class="icon-3"></i>在线客服</a></li>
+                                    <li> <a href="##" target="_blank" >
+                                        <i class="icon-4"></i>周边商城</a></li>
+                                    <li><a href="##" target="_blank" >
+                                        <i class="icon-5"></i>新客户端</a></li>
+                                    <li><a href="##" target="_blank" >
+                                        <i class="icon-6"></i>峡谷之巅</a></li>
+                                    <li><a href="##" target="_blank" >
+                                        <i class="icon-7"></i>CDK兑换</a></li>
+                                    <li><a href="##" target="_blank" >
+                                        <i class="icon-8"></i>轮换模式</a></li>
+                                    <li><a href="##" target="_blank" >
+                                        <i class="icon-9"></i>游戏资料</a></li>
+                                    <li><a href="##" target="_blank" >
+                                        <i class="icon-10"></i>领奖中心</a></li>
+                                    <li><a href="##" target="_blank" >
+                                        <i class="icon-11"></i>官方微博</a></li>
+                                    <li><a href="##" target="_blank" >
+                                        <i class="icon-12"></i>玩家论坛</a></li>
+                                </ul>
+
+
+
+                            </div>
+
+
+
+                        </div>
+                        <!--最新资讯-->
+                        <div class="tab news-top">
+                            <h3 class="tab-title">最新资讯 </h3><br><br><br>
+
+                        </div>
+                        <div class="zixun">
+                            <a href="##" style="text-decoration: none;   ">
+                                <img src="img/zx1.jpg" style="float: left;margin-top: 20px;">
+                                <span class="jqs"> 季前赛改动一览，铸就你的取胜之道！</span>
+                                <span class="news-first-desc">这次的季前赛改动可不少，包括对游戏中的每个英雄进行平衡性改动以支持新版符文系统</span>
+                            </a>
+
+                        </div>
+
+                        <ul class="new_ul" style="width: 820px;margin-top:10px;margin-left: -5% ">
+                            <li class="news-item">
+                                <a href="##" class="lnk-tit" target="_blank">
+                                    <span class="new-type">新闻</span>&nbsp;&nbsp;&nbsp;总决赛淘汰赛阶段售票27日开启！<span class="date">09/26</span>
+                                </a>
+                            </li>
+                            <li class="news-item">
+                                <a href="##" class="lnk-tit" target="_blank">
+                                    <span class="new-type">新闻</span>&nbsp;&nbsp;&nbsp;英雄联盟openday-首次高校音乐分享会！<span class="date">09/26</span>
+                                </a>
+                            </li>
+                            <li class="news-item">
+                                <a href="##" class="lnk-tit" target="_blank">
+                                    <span class="new-type">新闻</span>&nbsp;&nbsp;&nbsp;技能更新：赵信！<span class="date">09/26</span>
+                                </a>
+                            </li>
+                            <li class="news-item">
+                                <a href="##" class="lnk-tit" target="_blank">
+                                    <span class="new-type">新闻</span>&nbsp;&nbsp;&nbsp;皮肤下架公告<span class="date">09/26</span>
+                                </a>
+                            </li>
+                            <li class="news-item">
+                                <a href="##" class="lnk-tit" target="_blank">
+                                    <span class="new-type">新闻</span>&nbsp;&nbsp;&nbsp;Miss遭神秘人gank 众粉丝化身护花使者<span class="date">09/26</span>
+                                </a>
+                            </li>
+                            <li class="news-item">
+                                <a href="##" class="lnk-tit" target="_blank">
+                                    <span class="new-type">新闻</span>&nbsp;&nbsp;&nbsp;等级和奖励改动常见问题解答<span class="date">09/26</span>
+                                </a>
+                            </li>
+                            <li class="news-item">
+                                <a href="##" class="lnk-tit" target="_blank">
+                                    <span class="new-type">新闻</span>&nbsp;&nbsp;&nbsp;伊芙琳重做：再次沉沦痛苦之拥吧！<span class="date">09/26</span>
+                                </a>
+                            </li>
+
+                        </ul>
+                         <div style="float: right;margin-top: -40%;">
+                             <h3 style="display: block;">周免英雄</h3>
+                             <img src="img/zm1.jpg" style="float: right;margin-top: 20px"></div>
+
+
+
+
+                        <!-- -&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;-->
+                    </div>
+
+            </div>
+</div>
+
+    <div style="width: 100%;height: 100px;"><span id="llgd">浏览更多... </span> </div>
+    <div><img src="img/dibu.jpg" style="width: 100%"></div>
+
+
+
+
+
+
+
+
+
+</div>
+<p id="dlp" style="position: absolute;top: 3.5%;left: 75%;color: white;font-size: 18px;display: none"> 亲爱的召唤师，您已登录
+    <a href="LOL.html">退出</a>
+</p>
+</body>
+</html>

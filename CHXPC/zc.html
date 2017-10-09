@@ -1,0 +1,320 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .box{
+            width: 350px;
+            height: 50px;
+            border: 1px solid #AAAAAA;
+            position:absolute;
+            left: 40%;
+            margin: 50px auto 0;
+        }
+        .slider{
+            width:50px;
+            height: 50px;
+            background-color: darkgreen;
+            position: absolute;
+            left: 0;
+            top: 0;
+            cursor: pointer;
+            z-index: 10;
+            background: url("img/左右滑动.png" )no-repeat 10px;
+        }
+        .sp{
+            width: 100%;
+            position: absolute;
+            text-align: center;
+            line-height: 50px;
+            font-size: 18px;
+            z-index: 5;
+            display: none;
+        }
+        #btns{width: 80px;height: 50px;position: absolute;top: 325%;left: 42%;color: brown;font-size: 20px ;display: none;border-radius: 5px}
+        #txt{ width: 250px;margin-top: 30px;border-radius: 5px;height: 30px;margin-left: 10px}
+        #username{ width: 250px;margin-top: 30px;border-radius: 5px;height: 30px;margin-left: 10px}
+        #pw{ width: 250px;margin-top: 30px;border-radius: 5px;height: 30px;margin-left: 10px}
+        #pws{ width: 250px;margin-top: 30px;border-radius: 5px;height: 30px;margin-left: 10px}
+        .zong{ width: 600px;height: 800px;margin:100px auto ;left: -300px;background: bisque ;opacity: 0.8;border-radius: 20px}
+    </style>
+    <script src="js/jquery-3.2.1.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript">
+        $(function(){
+            //获取三个标签
+            var box = $('#box');
+            var slider = $('#slider');
+            var sp = $('#sp');
+            var hd=$('#hd')
+            var btns=$('#btns')
+
+            //鼠标在滑块上按下时的事件
+            slider.mousedown(function(ev){
+                //获取鼠标点击位置与滑块左侧的相对距离
+                var dx = ev.clientX - box.offset().left - 1;
+                var dsx = ev.clientX;
+                //鼠标在滑块上移动的事件
+                box.mousemove(function(e){
+                    /*完整的写法
+                     var sliderLeft = e.clientX - box.offset().left - 1 -dx;
+                     //完整的left值得计算表达式
+                     e.clientX - box.offset().left - 1 - (ev.clientX - box.offset().left - 1)
+                     */
+
+                    //用移动后的event.clientX减去初始时候的event.clientX，之间的差值就是slider的left值
+                    var sliderLeft = e.clientX - dsx;
+                    console.log(sliderLeft);
+                    slider.css('left',sliderLeft);
+
+                    //最大只能移动300个px
+                    if (slider.position().left >= 300) {
+                        slider.css('left',300)
+                    }
+                    //最小只能移动到0
+                    if (slider.position().left <= 0) {
+                        slider.css('left',0)
+                    }
+
+                })
+
+            })
+
+
+            //鼠标在滑块上弹起的事件
+            slider.mouseup(function(){
+                //移除box的mousemove事件
+                box.off('mousemove');
+                //如果slider已经移动到了最大位置，表示解锁成功
+                if (slider.position().left == 300) {
+                    //让slider隐藏
+                    slider.css('display','none');
+                    //让提示内容显示
+                    sp.css('display','block');
+                   hd.css('display','none');
+                    btns.css('display','block')
+                }
+                //如果没有移动到最大位置，就表示解锁未成功，让slider的位置还原
+                if (slider.position().left < 300) {
+                    slider.css('left',0)
+                }
+            })
+
+            //鼠标移出滑块事件
+            slider.mouseout(function(){
+                //不给mouseup()事件内容，表示直接执行mouseup()
+                slider.mouseup()
+            })
+
+
+        })
+    </script>
+    <script>
+        $(function(){
+        var txt=$('#txt');
+        var qk1=$('#qk1')
+        var cw=$('#cw');
+        var zq=$('#zq');
+         var sr=$('#sr')
+
+            qk1.click(function(){
+
+                txt.val('')
+            })
+
+                function fn(txt){
+                    var reg = /^1[34578]\d{9}$/;
+                    return reg.test(txt);
+                }
+            txt.blur(function(){
+                if ($.trim($('#txt').val()).length == 0) {
+                   sr.css('display','block')
+                    zq.css('display','none');
+                    cw.css('display','none');
+                    $('#txt').focus();
+                }else if(fn($.trim($('#txt').val())) == false){
+                    cw.css('display','block')
+                    zq.css('display','none');
+                    sr.css('display','none')
+                    $('#txt').focus();
+                }else{
+                   zq.css('display','block');
+                    cw.css('display','none');
+                    sr.css('display','none')
+                }
+            })
+
+
+                var username=$('#username');
+            var qk2=$('#qk2')
+            var cw2=$('#cw2');
+            var zq2=$('#zq2');
+            var sr2=$('#sr2')
+            qk2.click(function(){
+
+                username.val('')
+            })
+                        username.blur(function(){
+
+
+                    function  un(s) {
+                        var patrn = /^[a-zA-Z]{1}([a-zA-Z0-9]|[._]){3,19}$/;
+                        if (!patrn.exec(s)) return false
+                        return true
+                    }
+                            if($.trim($('#username').val()).length==0){
+
+                                sr2.css('display','block')
+                                zq2.css('display','none');
+                                cw2.css('display','none');
+                            }else if(un($.trim($('#username').val())) == false){
+                                cw2.css('display','block')
+                                zq2.css('display','none');
+                                sr2.css('display','none')
+                                $('#username').focus();
+                            }else{
+                                zq2.css('display','block');
+                                cw2.css('display','none');
+                                sr2.css('display','none')
+                            }
+                        })
+
+            var qk3=$('#qk3');
+            var cw3=$('#cw3');
+            var zq3=$('#zq3');
+            var sr3=$('#sr3');
+            var pw=$('#pw');
+            qk3.click(function(){
+                pw.val('')
+            })
+            function pwhs(s) {
+                var patrns = /^[a-zA-Z0-9]{6,14}$/;
+                if (!patrns.exec(s)) return false
+                return true
+            }
+            pw.blur(function(){
+
+
+            if($.trim($('#pw').val()).length==0){
+
+                sr3.css('display','block')
+                zq3.css('display','none');
+                cw3.css('display','none');
+            }
+                else if(pwhs($.trim($('#pw').val())) == false){
+                cw3.css('display','block')
+                zq3.css('display','none');
+                sr3.css('display','none')
+                $('#pw').focus();
+            }else{
+                zq3.css('display','block');
+                cw3.css('display','none');
+                sr3.css('display','none')
+            }
+
+            })
+
+
+            var qk4=$('#qk4');
+            var cw4=$('#cw4');
+            var zq4=$('#zq4');
+            var sr4=$('#sr4');
+            var pws=$('#pws');
+            qk4.click(function(){
+                pws.val('')
+            })
+
+
+            function pwhs2() {
+
+                if (pws.val() !=pw.val()) {return false}
+                else {return true}
+            }
+            pws.blur(function(){
+
+
+                if($.trim(pws.val()).length==0){
+
+                    sr4.css('display','block')
+                    zq4.css('display','none');
+                    cw4.css('display','none');
+                }
+
+                else if(pwhs2($.trim($('#pws').val())) == false){
+                    cw4.css('display','block')
+                    zq4.css('display','none');
+                    sr4.css('display','none')
+                    $('#pws').focus();
+                }else{
+                    zq4.css('display','block');
+                    cw4.css('display','none');
+                    sr4.css('display','none')
+                }
+
+            })
+
+
+
+        })
+
+    </script>
+
+</head>
+<body style="background: url('img/bjyx.jpg') no-repeat ;background-size: 100%">
+<div class="zong">
+    <p style="width: 184px;color: saddlebrown;font-size: 46px;padding-top: 20px;border-bottom: 2px dashed #777777;margin-left: 33%">用户注册 </p>
+    <p style="padding-top: 5px;border-bottom: 2px dashed #777777;margin-bottom: 50px"> </p>
+<div style="position: relative">
+      <span style="margin-left: 15px"> &nbsp;手机注册:</span>  <input type="text" placeholder="请填11位手机数字" id="txt">
+    <img src="img/请输入手机号.png" style="position: absolute;top: 55%;left: 60%;display: none" id="sr">
+    <img src="img/清空.png" style="position: absolute;top: 55%;left: 55%" id="qk1">
+    <img src="img/错误.png" style="position: absolute;top: 55%;left: 60%;display: none" id="cw">
+    <img src="img/正确.png" style="position: absolute;top: 55%;left: 60%;display: none" id="zq">
+</div>
+    <br>
+    <br>
+    <div style="position: relative">
+       <span style="margin-left: 15px">  &nbsp;用户名称:</span> <input type="text" placeholder="请输入字母 " id="username">
+        <img src="img/输入.png" style="position: absolute;top: 55%;left: 60%;display: none" id="sr2">
+        <img src="img/清空.png" style="position: absolute;top: 55%;left: 55%" id="qk2">
+        <img src="img/错误.png" style="position: absolute;top: 55%;left: 60%;display: none" id="cw2">
+        <img src="img/正确.png" style="position: absolute;top: 55%;left: 60%;display: none" id="zq2">
+    </div>
+    <br>
+    <br>
+    <div style="position: relative">
+    <span style="margin-left: 48px">  &nbsp;密码:</span> <input type="password" placeholder=" 请输入6-14位数字或字母" id="pw">
+        <img src="img/输入.png" style="position: absolute;top: 55%;left: 60%;display: none" id="sr3">
+        <img src="img/清空.png" style="position: absolute;top: 55%;left: 55%" id="qk3">
+        <img src="img/错误.png" style="position: absolute;top: 55%;left: 60%;display: none" id="cw3">
+        <img src="img/正确.png" style="position: absolute;top: 55%;left: 60%;display: none" id="zq3">
+    </div>
+    <br>
+    <br>
+    <div style="position: relative">
+    <span  style="margin-left: 16px">  &nbsp;确认密码:</span> <input type="password" placeholder="请于上面输入密码保持一致 " id="pws">
+        <img src="img/输入.png" style="position: absolute;top: 55%;left: 60%;display: none" id="sr4">
+        <img src="img/清空.png" style="position: absolute;top: 55%;left: 55%" id="qk4">
+        <img src="img/错误.png" style="position: absolute;top: 55%;left: 60%;display: none" id="cw4">
+        <img src="img/正确.png" style="position: absolute;top: 55%;left: 60%;display: none" id="zq4">
+        <button id="btns"> 注册</button>
+    </div>
+
+
+
+<div class="box" id="box">
+<p style="position: absolute;left: 36%;width: 130px" id="hd"> <span style="line-height: 50px">滑动验证 </span><img src="img/滑动.png" style="float: right"></p>
+    <div class="slider" id="slider"> </div>
+    <span class="sp" id="sp">验证成功</span>
+
+</div>
+
+
+</div>
+</body>
+</html>

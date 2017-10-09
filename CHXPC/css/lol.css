@@ -1,0 +1,334 @@
+
+    /*上面部分*/
+*{margin: 0;padding: 0;list-style: none;text-decoration: none;}
+#box_1{width:100%;height: 110px;background-color:  #0b0b0b; position: relative}
+.box_1ul{ width: 650px;height: 90px;overflow: hidden;    zoom: 1;float: left}
+.box_1ul>li{   width: 120px;height: 90px; display: inline-block;line-height: 30px;}
+.box_1ul>li>a{ display: block;  width: 100%;  padding-top: 30px;  text-align: center;  color: #ffffff;  font-size: 18px;}
+.box_1ul>li>span{     font-size: 10px; color: #838383;display: block;text-align: center;}
+#sosuo{float: left;
+    width: 40px;
+    height: 90px;
+    margin-left: -18px;
+    text-align: center}
+#sosuo>i{display: inline-block;
+    width: 27px;
+    height: 27px;
+    margin-top: 30px;
+    background-position: -10px 0;
+    cursor: pointer;}
+
+
+#sosuokuang{    position: absolute;
+    left: 1200px;;top:10px ;
+    width: 440px;
+    height: 90px;
+    z-index: 4;
+    background:black ;
+    display: none;
+}
+#ssktop{    margin-top: 27px;
+    width: 100%;
+    height: 36px;
+    background: #fff;
+    overflow: hidden;}
+#ico{    float: left;
+    background: url("../img/LOL2.png");
+    width: 30px;
+    height: 30px;
+    margin: 3px 4px 0;
+    background-position: -662px -136px;
+}
+.input-search-box{    float: left;
+    width: 368px;
+    height: 20px;
+    line-height: 20px;
+    margin-top: 8px;
+    background: #fff;
+    border: 0 none;
+    font-size: 16px;
+    color: #545454;
+
+}
+.input-search-tips{    position: absolute;
+    top: 36px;
+    right: 65px;
+    color: #999;
+    font-size: 12px; }
+.top-search-close{    float: right;
+    background: url("../img/LOL2.png");
+    margin-right: 5px;
+    cursor: pointer;
+    width: 28px;
+    height: 36px;
+    background-position: -664px -175px;}
+.top-search-quick{     position: absolute;
+    width: 420px;
+    padding: 15px 10px;
+    top: 70px;
+    background: #fff;
+}
+.search-quick-title{ display: block;
+    padding-left: 30px;
+    height: 30px;
+    line-height: 30px;
+    font-size: 12px;
+    color: #a4a4a4;}
+.top-search-quick>a {display: block;
+    padding-left: 50px;
+    height: 30px;
+    line-height: 30px;
+    color: #696969;
+    font-size: 14px;}
+.top-app{ float: left;
+    width: 40px;
+    height: 90px;
+    margin-left: 5px;
+    text-align: center;}
+.icon-top-app{ background: url("../img/LOL2.png")no-repeat ;
+    display: inline-block;
+    width: 21px;
+    height: 27px;
+    margin-top: 30px;
+    background-position: -45px 0;
+    vertical-align: middle;}
+
+
+.top-user{ float: right;
+    position: relative;
+    width: 350px;
+    margin-right: 12%;
+    margin-top: 10px;;
+}
+.top-user-info{ height: 90px;
+    overflow: hidden;
+    zoom: 1;}
+.top-user-side{  float: left;
+    position: relative;
+    width: 100px;
+    height: 90px; }
+.user-mask{background: url("../img/LOL2.png");
+    position: absolute;
+    left: 13px;
+    top: -8px;
+    z-index: 2;
+    width: 74px;
+    height: 85px;
+    background-position: 0 -159px; }
+.top-user-side>img {    width: 66px;
+    height: 66px;
+    margin-left: 17px;
+    margin-top: 12px;
+    border-radius: 33px}
+.top-user-main{ padding-top: 18px;
+    overflow: hidden;
+    zoom: 1;
+    margin-left: 110px;}
+.top-user-unlogin{     font-size: 16px;
+    color: #fff;
+    padding: 5px 0;}
+.top-user-tips{color: #999;
+    font-size: 12px;}
+#gbg{    transition: all .8s ease;}
+
+
+
+<!--下面部分-->
+
+
+    .memu{position: relative;
+        width: 100%;
+        height: 80px;
+        border-top: 2px solid #8c6c2d;
+        background: url(../img/LOL2.png) repeat-x 0 -257px;
+    }
+#twodiv{width: 100%;height: 100%; transition: all .8s ease;}
+.menu-inner{
+    height: 60px;
+    width: 1240px;
+    margin: 0 auto;
+    list-style: none
+}
+.menu-item{     float: left;
+    width: 110px;
+    height: 58px;
+    line-height: 58px;
+
+    font-size: 20px;
+    color: #555555;
+    text-align: center;
+    cursor: pointer;
+    margin-left: 100px;
+}
+.ln{border-bottom: 4px solid #777777}
+.content{ padding-top: 40px;
+    margin-top: -20px;
+    background: url("../img/bg-content-top.jpg")no-repeat center top}
+.content-inner{ background: url("../img/bg-content-bottom.jpg")no-repeat center bottom}
+.home-slide-item { width: 1240px;
+    margin: 0 auto;
+    overflow: hidden;}
+
+.promo{float: left;
+    position: relative;
+    width: 820px;
+    height: 400px;
+    margin-right: 20px;
+    margin-bottom: 60px;
+    overflow: hidden;
+    background-color: #0b0b0b;
+}
+.promo-list{ position: absolute;
+    left:0;
+    width: 4100px;
+    height: 350px;}
+
+.promo-item{float: left;
+    width: 820px;
+    height: 340px;
+    background: #000;
+    position: relative;
+}
+.promo-trigger{    width: 100%;
+    height: 58px;
+    background: #121112;
+    overflow: hidden;
+    margin-top: 43%;
+}
+.trigger-item{ float: left;
+    width: 164px;
+    height: 50px;
+    line-height: 50px;
+    cursor: pointer;
+    text-align: center;
+    color: #c8c8c8;
+    font-size: 14px;}
+.zn{color: #e9c06c}
+.side-nav{    float: left;
+    width: 400px;
+    height: 400px}
+.side-download{    position: relative;
+    display: block;
+    width: 100%;
+    height: 150px;
+    margin-bottom: 10px;
+    background: url("../img/bg-download.jpg")no-repeat}
+.side-down-video{display: block;
+    width: 100%;
+    height: 150px;}
+.side-menu>li{float: left;
+    width: 130px;
+    height: 55px;
+    margin-left: 5px;
+    margin-top: 5px;}
+.side-menu>li>a{     display: block;
+    width: 130px;
+    height: 55px;
+    line-height: 55px;
+    background: #fff;
+    text-align: center;
+    font-size: 14px;
+    color: #555555}
+.side-menu>li>a>i{
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    vertical-align: middle;
+    margin-right: 8px;
+}
+.icon-1{ background: url("../img/LOL2.png")no-repeat -200px 0;}
+.icon-2{ background: url("../img/LOL2.png")no-repeat -560px 0;}
+.icon-3{ background: url("../img/LOL2.png")no-repeat -440px 0;}
+.icon-4{ background: url("../img/LOL2.png")no-repeat -380px 0;}
+.icon-5{ background: url("../img/LOL2.png")no-repeat -650px 0;}
+.icon-6{ background: url("../img/LOL2.png")no-repeat -290px 0;}
+.icon-7{ background: url("../img/LOL2.png")no-repeat -620px 0;}
+.icon-8{ background: url("../img/LOL2.png")no-repeat -260px 0;}
+.icon-9{ background: url("../img/LOL2.png")no-repeat -470px 0;}
+.icon-10{ background: url("../img/LOL2.png")no-repeat -470px 0;}
+.icon-11{ background: url("../img/LOL2.png")no-repeat -500px 0;}
+.icon-12{ background: url("../img/LOL2.png")no-repeat -410px 0;}
+#dl{width: 682px;height: 468px;position: absolute;top: -2%;left: 33%;background: url("../img/dl.jpg")no-repeat -750px center;  display: none ;border-radius: 15px;border: 2px solid #7a7a7a  }
+#dl_1{width: 300px;height: 280px;margin: 25% auto;}
+#id_1{ margin-top: 20%;margin-left: 15%;height: 40px;
+    width: 212px;color: #3c3c3c;
+    font-size: 16px;border-radius: 5px;}
+#pw{ margin-top: 5%;margin-left: 15%;height: 40px;
+    width: 212px;color: #3c3c3c;
+    font-size: 16px;border-radius: 5px;}
+#btns{ margin-top: 5%;margin-left: 35%;height: 40px;
+    width: 80px;background: url("../img/dl.jpg")no-repeat 10% 30%;color: #3c3c3c;
+    font-size: 16px;border-radius: 5px;}
+#zc{ color: #0b0b0b;font-size: 16px}
+#X{background: url("../img/icon_3_tiny.png")no-repeat -221px -126px;width: 47px;
+    height: 20px;
+    position: absolute;top: 27%;left: 93% }
+
+.tab{position: relative;
+    height: 50px;
+    border-bottom: 3px solid #ededee;
+    margin-top: -2%}
+.tab-title{ float: left;
+    font-size: 26px;
+    line-height: 20px;
+    color: #404040;
+    margin-left: 40px;
+    font-weight: normal;}
+.zixun{height: 124px;
+    margin-bottom: 60px;
+
+}
+.jqs{display: block;
+    font-size: 36px;
+    font-weight: bold;
+    color: #3e3e3e;
+    line-height: 50px;
+    height: 50px;
+
+    float: left;
+    margin-top: 20px;
+    margin-left: 15px}
+.news-first-desc{
+    display: block;
+    height: 60px;
+    overflow: hidden;
+    font-size: 14px;
+    color: #898989;
+    line-height: 1.5;
+    float: left;
+    margin-left: 20px;
+    margin-top: 20px;  }
+
+.lnk-tit{display: block;
+    position: relative;
+    height: 35px;
+    line-height: 35px;
+    padding: 0 55px 0 90px;
+    font-size: 18px;
+    color: #7a7a7a;
+}
+.lnk-tit:hover{text-decoration: none;color: #8c6c2d}
+.new-type{float: left;
+    width: 68px;
+    height: 35px;
+    line-height: 35px;
+    background: #ebebeb;
+    text-align: center;
+    color: #5e5e5e; margin-right: 100px}
+.date{float: right;
+    width: 50px;
+    height: 35px;
+    line-height: 35px;
+    text-align: right;
+    color: #bababa; margin-left: 110px}
+#llgd{display: block;
+    width: 100%;
+    height: 45px;
+    margin-top: 60px;
+    line-height: 45px;
+    background: #f0f0f0;
+    color: #7a7a7a;
+    font-size: 16px;
+    text-align: center;
+}

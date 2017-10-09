@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>fullPage.js — 绑定菜单演示_dowebok</title>
+<link rel="stylesheet" href="css/jquery.fullPage.css">
+<style>
+	*{margin: 0;padding: 0;list-style: none;text-decoration: none}
+#menu { margin: 0; padding: 0; position: fixed; left: 10px; top: 10px; list-style-type: none; z-index: 70;}
+#menu li { float: left; margin:  0 10px 0 0; font-size: 14px;}
+#menu a { float: left; padding: 10px 20px; background-color: #fff; color: #333; text-decoration: none;}
+#menu .active a { color: #fff; background-color: #333;}
+
+
+	#dis1{background: url("img/sj1.jpg")no-repeat 60%;background-size: cover;width: 1920px;height: 1000px}
+	.d1h3{color: white;position: absolute;font-size: 58px;width: 600px;left: -88%;margin-top: -36%;font-family: 楷体}
+	.wx-i2{ padding-left: 25px;  line-height: 22px;background: url("img/icon.png")no-repeat 2px -158px;color: white;margin:20px}
+	.wx-i1{ padding-left:25px;  line-height: 22px;background: url("img/icon.png")no-repeat 0 -113px;color: white;margin:20px}
+	.wx-i3{ padding-left: 25px;  line-height: 22px;background: url("img/icon.png")no-repeat 2px -203px;color: white;margin:20px}
+
+	#dis2{ background: url("img/sj201.jpg")no-repeat 50% 0;width: 100%;height: 1000px;background-size: 100%}
+	#dis3{ background: url("img/sj301.jpg")no-repeat 50% 0;width: 100%;height: 1000px;background-size: 100%}
+	#dis4{ background: url("img/sj401.jpg")no-repeat 50% 0;width: 100%;height: 1000px;background-size: 100%}
+	#dis5{ background: url("img/sj501.jpg")no-repeat 50% 0;width: 100%;height: 1000px;background-size: 100%}
+	#dis6{ background: url("img/sj601.jpg")no-repeat 50% 0;width: 100%;height: 1000px;background-size: 100%
+	}
+
+	#top:hover{border: 1px solid #777777;background-color: #777777 }
+	.fix-nav{ position:fixed;top: 0;left: 0;background: rgba(0,0,0,0.3);  width: 161px;  height: 100%;}
+	.box-nav{    height: 457px;
+		width: 161px;
+		margin-top: 227px;
+		background: url(img/sjc.png) no-repeat;}
+
+	.s4_act_btn{width: 157px;
+		height: 123px;
+		position: absolute;
+		left: 0;
+		top: 116px;  }
+	.s4_act_btn a{display: block;
+		line-height: 2000px;
+		overflow: hidden;
+		overflow: hidden;
+		width: 157px;
+		height: 123px;
+		background: url("img/sjc1.png") no-repeat}
+	.nav-item{ height: 76px;    display: block;
+		text-indent: -9000em;
+		outline: none;
+		text-decoration: none;
+		overflow: hidden;}
+	/*#uls>li:hover{box-shadow: 0 4px 3px #070707;color: yellow }*/
+		#uls>li:nth-of-type(1){background: url(img/sjc.png) no-repeat;}
+	#uls>li:nth-of-type(2){background: url(img/sjc.png) no-repeat 0 -76px;}
+	#uls>li:nth-of-type(3){background: url(img/sjc.png) no-repeat 0 -152px;}
+	#uls>li:nth-of-type(4){background: url(img/sjc.png) no-repeat 0 -228px;}
+	#uls>li:nth-of-type(5){background: url(img/sjc.png) no-repeat 0 -304px;}
+	#uls>li:nth-of-type(6){background: url(img/sjc.png) no-repeat 0 -380px;}
+
+	#uls>li:nth-of-type(1):hover{background: url(img/sjc.png) no-repeat -160px 0 }
+	#uls>li:nth-of-type(2):hover{background: url(img/sjc.png) no-repeat -160px -76px }
+	#uls>li:nth-of-type(3):hover{background: url(img/sjc.png) no-repeat -160px -152px}
+	#uls>li:nth-of-type(4):hover{background: url(img/sjc.png) no-repeat -160px -228px }
+	#uls>li:nth-of-type(5):hover{background: url(img/sjc.png) no-repeat -160px -304px }
+	#uls>li:nth-of-type(6):hover{background: url(img/sjc.png) no-repeat -160px -380px}
+
+</style>
+<script src="js/jquery-3.2.1.js"></script>
+<script src="js/jquery.fullPage.min.js"></script>
+<script>
+$(function(){
+	$('#dowebok').fullpage({
+
+		anchors: ['page1', 'page2', 'page3', 'page4'],
+		menu: '#menu'
+	});
+
+		var boxs=$('.box-nav')
+		var l1=$('#l1');
+	var l2=$('#l2');
+	var l3=$('#l3');
+	var l4=$('#l4');
+	var l5=$('#l5');
+	var l6=$('#l6');
+
+	l1.click(function(){
+		l1.css('background',' url("img/sjc.png") no-repeat -160px 0px')
+		l2.css('background',' url("img/sjc.png") no-repeat 0px -76px')
+		l3.css('background',' url("img/sjc.png") no-repeat 0px -152px')
+		l4.css('background',' url("img/sjc.png") no-repeat 0px -228px')
+		l5.css('background',' url("img/sjc.png") no-repeat 0px -304px')
+		l6.css('background',' url("img/sjc.png") no-repeat 0px -380px')
+	})
+	l2.click(function(){
+		l2.css('background',' url("img/sjc.png") no-repeat -160px -76px')
+		l1.css('background',' url("img/sjc.png") no-repeat 0px 0px')
+		l3.css('background',' url("img/sjc.png") no-repeat 0px -152px')
+		l4.css('background',' url("img/sjc.png") no-repeat 0px -228px')
+		l5.css('background',' url("img/sjc.png") no-repeat 0px -304px')
+		l6.css('background',' url("img/sjc.png") no-repeat 0px -380px')
+	})
+	l3.click(function(){
+		l3.css('background',' url("img/sjc.png") no-repeat -160px -152px')
+		l1.css('background',' url("img/sjc.png") no-repeat 0px 0px')
+		l2.css('background',' url("img/sjc.png") no-repeat 0px -76px')
+		l4.css('background',' url("img/sjc.png") no-repeat 0px -228px')
+		l5.css('background',' url("img/sjc.png") no-repeat 0px -304px')
+		l6.css('background',' url("img/sjc.png") no-repeat 0px -380px')
+	})
+	l4.click(function(){
+		l4.css('background',' url("img/sjc.png") no-repeat -160px -228px')
+		l1.css('background',' url("img/sjc.png") no-repeat 0px 0px')
+		l2.css('background',' url("img/sjc.png") no-repeat 0px -76px')
+		l3.css('background',' url("img/sjc.png") no-repeat 0px -152px')
+		l5.css('background',' url("img/sjc.png") no-repeat 0px -304px')
+		l6.css('background',' url("img/sjc.png") no-repeat 0px -380px')
+	})
+	l5.click(function(){
+		l5.css('background',' url("img/sjc.png") no-repeat -160px -304px')
+		l1.css('background',' url("img/sjc.png") no-repeat 0px 0px')
+		l2.css('background',' url("img/sjc.png") no-repeat 0px -76px')
+		l3.css('background',' url("img/sjc.png") no-repeat 0px -152px')
+		l4.css('background',' url("img/sjc.png") no-repeat 0px -228px')
+		l6.css('background',' url("img/sjc.png") no-repeat 0px -380px')
+	})
+	l6.click(function(){
+		l6.css('background',' url("img/sjc.png") no-repeat -160px -380px')
+		l1.css('background',' url("img/sjc.png") no-repeat 0px 0px')
+		l2.css('background',' url("img/sjc.png") no-repeat 0px -76px')
+		l3.css('background',' url("img/sjc.png") no-repeat 0px -152px')
+		l4.css('background',' url("img/sjc.png") no-repeat 0px -228px')
+		l5.css('background',' url("img/sjc.png") no-repeat 0px -304px')
+	})
+
+//
+//	l1.mouseleave(function(){
+//		l1.css('background',' url("img/sjc.png") no-repeat 0px 0px')
+//
+//	})
+//	l2.mouseleave(function(){
+//		l2.css('background',' url("img/sjc.png") no-repeat 0px -76px')
+//
+//	})
+//	l3.mouseleave(function(){
+//		l3.css('background',' url("img/sjc.png") no-repeat 0px -152px')
+//
+//	})
+//	l4.mouseleave(function(){
+//		l4.css('background',' url("img/sjc.png") no-repeat 0px -228px')
+//
+//	})
+//	l5.mouseleave(function(){
+//		l5.css('background',' url("img/sjc.png") no-repeat 0px -304px')
+//
+//	})
+//	l6.mouseleave(function(){
+//		l6.css('background',' url("img/sjc.png") no-repeat 0px -380px')
+//
+//	})
+
+});
+</script>
+</head>
+
+<body>
+
+
+<div id="dowebok">
+		<div class="section" id="dis1">
+			<div style="width: 200px;height: 100px;background: url('img/LOL2.png')no-repeat 0 -30px;margin-top:-25%;position: absolute;left: 50%;margin-left: -100px">
+				<p style=" margin-top: 60%;font-size: 24px;color: #f5d88c;"> 英雄联盟官方出品</p>
+				<p style=" margin-top: 0%;margin-left: -90%;font-size: 24px;color: #f5d88c;" ><img src="img/ps1.gif"> </p>
+				<h3 class="d1h3">好友状态，一手掌握！</h3>
+			</div>
+			<div style="width: 1010px;height: 280px;position: absolute;top: 40%;left: 25%">
+				<video src=" video/meipai.mp4" style="height: 280px;float: left" autoplay loop></video>
+				<div style="width: 500px;height: 280px;background-color: transparent;float: left;margin-left: 8px">
+				<img src="img/pic-ewm.png" style="margin-left: 22px">
+					<a href="@@"><div style="background:url('img/sp.png')no-repeat ;width: 157px;height: 55px;position: absolute;left: 70%;top: 0" > </div> </a>
+					<a href="@@"><div style="background:url('img/sp.png')no-repeat 0 -58px;width: 159px;height: 57px;margin-top: 1px;position: absolute;left: 70%;top: 20%" > </div> </a>
+					<li class="wx-i2">使用手机QQ→动态→扫一扫二维码 自动免费下载</li>
+					<li class="wx-i1">使用微信→发现→扫一扫二维码 自动免费下载</li>
+					<li class="wx-i3">可在各大应用市场搜索【掌上英雄联盟】，免费下载</li>
+				</div>
+				<a href="#dis2"><div id="top" style="position: absolute;top:138%;left: 40%;background: url(img/icon.png)no-repeat 0 -348px ;width: 140px;height: 80px;"> </div> </a>
+			</div>
+
+
+
+		</div>
+<!--一屏结束-->
+	<!--二屏开始-->
+
+	<div class="section" id="dis2">
+
+		<div style="width: 100%;height: 100%;background: url(img/sj2.jpg)no-repeat 50% 420px;background-size: 100%">
+			<div style="width: 500px;height: 280px;background-color: transparent;position: absolute;top: 55%;left: 29%">
+				<img src="img/pic-ewm.png"style="margin-left: 22px">
+				<a href="@@"><div style="background:url('img/sp.png')no-repeat ;width: 157px;height: 55px;position: absolute;left: 45%;top: 0" > </div> </a>
+				<a href="@@"><div style="background:url('img/sp.png')no-repeat 0 -58px;width: 159px;height: 57px;margin-top: 1px;position: absolute;left:45%;top: 20%" > </div> </a>
+				<li class="wx-i2">使用手机QQ→动态→扫一扫二维码 自动免费下载</li>
+				<li class="wx-i1">使用微信→发现→扫一扫二维码 自动免费下载</li>
+				<li class="wx-i3">可在各大应用市场搜索【掌上英雄联盟】，免费下载</li>
+			</div>
+			
+		</div>
+		<a href="#dis1"><div id="top" style="position: absolute;top:8%;left: 45%;background: url(img/icon.png)no-repeat 0 21px ;width: 140px;height: 80px;"> </div> </a>
+		<a href="#dis3"><div id="top" style="position: absolute;top:88%;left: 45%;background: url(img/icon.png)no-repeat 0 -348px ;width: 140px;height: 80px;"> </div> </a>
+	</div>
+
+
+
+	<div class="section"  id="dis3">
+
+		<div style="width: 100%;height: 100%;background: url(img/sj302.jpg)no-repeat 50% 420px;background-size: 100%">
+			<div style="width: 500px;height: 280px;background-color: transparent;position: absolute;top: 55%;left: 29%">
+				<img src="img/pic-ewm.png"style="margin-left: 22px">
+				<a href="@@"><div style="background:url('img/sp.png')no-repeat ;width: 157px;height: 55px;position: absolute;left: 45%;top: 0" > </div> </a>
+				<a href="@@"><div style="background:url('img/sp.png')no-repeat 0 -58px;width: 159px;height: 57px;margin-top: 1px;position: absolute;left:45%;top: 20%" > </div> </a>
+				<li class="wx-i2">使用手机QQ→动态→扫一扫二维码 自动免费下载</li>
+				<li class="wx-i1">使用微信→发现→扫一扫二维码 自动免费下载</li>
+				<li class="wx-i3">可在各大应用市场搜索【掌上英雄联盟】，免费下载</li>
+			</div>
+
+		</div>
+		<a href="#dis2"><div id="top" style="position: absolute;top:8%;left: 45%;background: url(img/icon.png)no-repeat 0 21px ;width: 140px;height: 80px;"> </div> </a>
+		<a href="#dis4"><div id="top" style="position: absolute;top:88%;left: 45%;background: url(img/icon.png)no-repeat 0 -348px ;width: 140px;height: 80px;"> </div> </a>
+	</div>
+
+
+
+
+
+	<div class="section"id="dis4" >
+		<div style="width: 100%;height: 100%;background: url(img/sj402.jpg)no-repeat 50% 450px;background-size: 100%">
+			<div style="width: 500px;height: 280px;background-color: transparent;position: absolute;top: 55%;left: 29%">
+				<img src="img/pic-ewm.png"style="margin-left: 22px">
+				<a href="@@"><div style="background:url('img/sp.png')no-repeat ;width: 157px;height: 55px;position: absolute;left: 45%;top: 0" > </div> </a>
+				<a href="@@"><div style="background:url('img/sp.png')no-repeat 0 -58px;width: 159px;height: 57px;margin-top: 1px;position: absolute;left:45%;top: 20%" > </div> </a>
+				<li class="wx-i2">使用手机QQ→动态→扫一扫二维码 自动免费下载</li>
+				<li class="wx-i1">使用微信→发现→扫一扫二维码 自动免费下载</li>
+				<li class="wx-i3">可在各大应用市场搜索【掌上英雄联盟】，免费下载</li>
+			</div>
+
+		</div>
+		<a href="#dis3"><div id="top" style="position: absolute;top:8%;left: 45%;background: url(img/icon.png)no-repeat 0 21px ;width: 140px;height: 80px;"> </div> </a>
+		<a href="#dis5"><div id="top" style="position: absolute;top:88%;left: 45%;background: url(img/icon.png)no-repeat 0 -348px ;width: 140px;height: 80px;"> </div> </a>
+	</div>
+
+
+
+	<div class="section"id="dis5" >
+		<div style="width: 100%;height: 100%;background: url(img/sj502.jpg)no-repeat 50% 420px;background-size: 100%">
+			<div style="width: 500px;height: 280px;background-color: transparent;position: absolute;top: 55%;left: 29%">
+				<img src="img/pic-ewm.png"style="margin-left: 22px">
+				<a href="@@"><div style="background:url('img/sp.png')no-repeat ;width: 157px;height: 55px;position: absolute;left: 45%;top: 0" > </div> </a>
+				<a href="@@"><div style="background:url('img/sp.png')no-repeat 0 -58px;width: 159px;height: 57px;margin-top: 1px;position: absolute;left:45%;top: 20%" > </div> </a>
+				<li class="wx-i2">使用手机QQ→动态→扫一扫二维码 自动免费下载</li>
+				<li class="wx-i1">使用微信→发现→扫一扫二维码 自动免费下载</li>
+				<li class="wx-i3">可在各大应用市场搜索【掌上英雄联盟】，免费下载</li>
+			</div>
+
+		</div>
+		<a href="#dis4"><div id="top" style="position: absolute;top:8%;left: 45%;background: url(img/icon.png)no-repeat 0 21px ;width: 140px;height: 80px;"> </div> </a>
+		<a href="#dis6"><div id="top" style="position: absolute;top:88%;left: 45%;background: url(img/icon.png)no-repeat 0 -348px ;width: 140px;height: 80px;"> </div> </a>
+	</div>
+
+	<div class="section"id="dis6" >
+		<div style="width: 100%;height: 100%;background: url(img/sj602.jpg)no-repeat 50% 490px;background-size: 100%">
+			<div style="width: 500px;height: 280px;background-color: transparent;position: absolute;top: 55%;left: 29%">
+				<img src="img/pic-ewm.png"style="margin-left: 22px">
+				<a href="@@"><div style="background:url('img/sp.png')no-repeat ;width: 157px;height: 55px;position: absolute;left: 45%;top: 0" > </div> </a>
+				<a href="@@"><div style="background:url('img/sp.png')no-repeat 0 -58px;width: 159px;height: 57px;margin-top: 1px;position: absolute;left:45%;top: 20%" > </div> </a>
+				<li class="wx-i2">使用手机QQ→动态→扫一扫二维码 自动免费下载</li>
+				<li class="wx-i1">使用微信→发现→扫一扫二维码 自动免费下载</li>
+				<li class="wx-i3">可在各大应用市场搜索【掌上英雄联盟】，免费下载</li>
+			</div>
+
+		</div>
+		<a href="#dis5"><div id="top" style="position: absolute;top:8%;left: 45%;background: url(img/icon.png)no-repeat 0 21px ;width: 140px;height: 80px;"> </div> </a>
+	</div>
+
+</div>
+
+<div class="fix-nav" id="fixNavBox" >
+	<div class="box-nav">
+		<div class="s4_act_btn"><a href="##">季前赛版本震撼来袭</a></div>
+		<ul id="uls">
+			<li id="l1" ><a class="nav-item" href="#dis1" >首页</a></li>
+			<li id="l2"><a class="nav-item curr"  href="#dis2">好友状态</a></li>
+			<li id="l3"><a class="nav-item"  href="#dis3">首发咨询</a></li>
+			<li id="l4"><a class="nav-item" href="#dis4">个人战绩</a></li>
+			<li id="l5"><a class="nav-item"  href="#dis5">英雄资料</a></li>
+			<li id="l6"><a class="nav-item"  href="#dis6">能力展示</a></li>
+		</ul>
+	</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

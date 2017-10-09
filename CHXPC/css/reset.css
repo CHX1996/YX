@@ -1,0 +1,28 @@
+
+
+*{
+	margin:0;
+	padding:0;
+	box-sizing:border-box;
+}
+a,a:hover{
+	text-decoration: none;
+	color:#333;
+}
+ul,li{
+	list-style: none;
+
+}
+li{background:white;
+border: 2px solid red;
+margin-left: 2px}
+h1,h2,h3,h4,h5,h6{
+	font-weight: normal;
+}
+.clear::after{
+	content:'';
+	display: block;
+	clear: both;
+
+}
+.img-a>img{width: 150px;height: 150px; }

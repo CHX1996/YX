@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="css/reset.css" />
+		<link rel="stylesheet" href="css/index.css" />
+		<style type="text/css">
+			section{
+				width:900px;
+				margin:100px auto 150px;
+			}
+			h1{
+				text-align: center;
+				color:#fff;
+				background-color:rgb(30,50,80);
+				padding:10px 0 15px 0;
+			}
+			.price{
+				text-align: left;
+				color:#e4393c;
+				font-size:16px;
+				margin:20px;
+
+			}
+			.price span{
+				font-size: 24px;
+			}
+		</style>
+	</head>
+	<body>
+
+	<div  style="background: url('img/CC3.jpg')no-repeat ;background-size: cover;margin-top: -5%;opacity: 0.2;width: 100%;height: 1500px;
+	position: absolute;z-index: -30" ></div>
+		<section>
+			<h1>我的购物车</h1>
+			<ul class="cart-list clear" id="cartList" >
+
+				
+			
+			</ul>
+			<div class="price clear"><h2 style=>总价:&nbsp;￥<span id="price">0.00</span> </h2></div>
+
+			<a href="https://auth.alipay.com/login/index.htm">
+				<button style="width: 80px;height: 30px;float: right;margin-top: -5%"> 点击付款</button>
+			</a>
+		</section>
+		
+
+		
+		
+		
+		<script type="text/javascript" src="js/jquery-3.2.1.min.js" ></script>
+		<script type="text/javascript" src="js/data.js" ></script>
+		<script type="text/javascript" src="js/cart.js" ></script>
+		
+		
+	</body>
+</html>
